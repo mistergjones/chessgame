@@ -11,7 +11,7 @@
 
 ## General info
 
-This project is to demonstrate React JS, components, classes by the use of a simple chess game.
+This project is to demonstrate Node JS, React JS, components, classes by the use of a chess game.
 
 ## Chess game link
 
@@ -48,9 +48,10 @@ Future items include:
 
 Project is created with:
 
-Javascript
-React JS
-CSS
+-   Javascript
+-   React JS
+-   Node JS
+-   HTML/CSS
 
 Deployment: surge.sh
 
