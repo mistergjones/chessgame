@@ -17,22 +17,7 @@ var determineMovement = function (
             );
             console.log(`Player: ${player}`);
 
-            if (player === 2) {
-                if (
-                    // pawn can move straight by 1 position if there is nothing blocking it
-                    whichSqaureNumberWasClicked === originatingSquare - 8 &&
-                    !isDestinationSquareOccupied
-                ) {
-                    return true;
-                } else if (
-                    // pawn can move diagnal if there is an opposition piece there.
-                    isDestinationSquareOccupied &&
-                    (whichSqaureNumberWasClicked === originatingSquare - 9 ||
-                        whichSqaureNumberWasClicked === originatingSquare - 7)
-                ) {
-                    return true;
-                }
-            } else if (player === 1) {
+            if (player === 1) {
                 if (
                     // pawn can move straight by 1 position if there is nothing blocking it
                     whichSqaureNumberWasClicked === originatingSquare + 8 &&
@@ -44,6 +29,21 @@ var determineMovement = function (
                     isDestinationSquareOccupied &&
                     (whichSqaureNumberWasClicked === originatingSquare + 9 ||
                         whichSqaureNumberWasClicked === originatingSquare + 7)
+                ) {
+                    return true;
+                }
+            } else if (player === 2) {
+                if (
+                    // pawn can move straight by 1 position if there is nothing blocking it
+                    whichSqaureNumberWasClicked === originatingSquare - 8 &&
+                    !isDestinationSquareOccupied
+                ) {
+                    return true;
+                } else if (
+                    // pawn can move diagnal if there is an opposition piece there.
+                    isDestinationSquareOccupied &&
+                    (whichSqaureNumberWasClicked === originatingSquare - 9 ||
+                        whichSqaureNumberWasClicked === originatingSquare - 7)
                 ) {
                     return true;
                 }

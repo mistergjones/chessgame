@@ -169,22 +169,22 @@ export default class Game extends React.Component {
                 // obtain what the square clicked and then find out from the individual piece, what it can do.
                 // i.e. can it move to the destnation square
                 // true or false
-                // const isThePieceMovingInRightDirection = squares[
-                //     this.state.squareSelection
-                // ].isMovePossible(
-                //     this.state.squareSelection,
-                //     whichSqaureNumberWasClicked,
-                //     isDestinationSquareOccupied
-                // );
-
-                var whichPieceSelected = squares[this.state.squareSelection];
-                const isThePieceMovingInRightDirection = determineMovement(
-                    whichPieceSelected,
+                const isThePieceMovingInRightDirection = squares[
+                    this.state.squareSelection
+                ].isMovePossible(
                     this.state.squareSelection,
                     whichSqaureNumberWasClicked,
-                    isDestinationSquareOccupied,
-                    this.state.player
+                    isDestinationSquareOccupied
                 );
+
+                // var whichPieceSelected = squares[this.state.squareSelection];
+                // const isThePieceMovingInRightDirection = determineMovement(
+                //     whichPieceSelected,
+                //     this.state.squareSelection,
+                //     whichSqaureNumberWasClicked,
+                //     isDestinationSquareOccupied,
+                //     this.state.player
+                // );
 
                 // find the king positions
                 console.log(this.findKingPositions(squares));
@@ -238,8 +238,10 @@ export default class Game extends React.Component {
                 <h2>Chess Game</h2>
                 <div className="game-info">
                     <h3>Player 1 = White || Player 2 = Black</h3>
-                    <h4>NOTE: Pawns can only move 1 square. No en-passant </h4>
                     <h3>Player: {this.state.player} turn</h3>
+                    <h4>NOTE: Pawns can only move 1 square. No en-passant. </h4>
+                    <h4>NOTE: Checking and Checkmate in progress. </h4>
+
                     <div
                         id="player-turn-box"
                         style={{ backgroundColor: this.state.turn }}

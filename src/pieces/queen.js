@@ -8,18 +8,18 @@ export default class Queen extends Piece {
         super(player, player === 1 ? chesspieceWhiteIcon : chesspieceBlackIcon);
     }
 
-    // isMovePossible(originatingSquare, destinationSquare) {
-    //     let mod = originatingSquare % 8;
-    //     let diff = 8 - mod;
+    isMovePossible(originatingSquare, destinationSquare) {
+        let mod = originatingSquare % 8;
+        let diff = 8 - mod;
 
-    //     return (
-    //         Math.abs(originatingSquare - destinationSquare) % 9 === 0 ||
-    //         Math.abs(originatingSquare - destinationSquare) % 7 === 0 ||
-    //         Math.abs(originatingSquare - destinationSquare) % 8 === 0 ||
-    //         (destinationSquare >= originatingSquare - mod &&
-    //             destinationSquare < originatingSquare + diff)
-    //     );
-    // }
+        return (
+            Math.abs(originatingSquare - destinationSquare) % 9 === 0 ||
+            Math.abs(originatingSquare - destinationSquare) % 7 === 0 ||
+            Math.abs(originatingSquare - destinationSquare) % 8 === 0 ||
+            (destinationSquare >= originatingSquare - mod &&
+                destinationSquare < originatingSquare + diff)
+        );
+    }
 
     getPathMovement(originatingSquare, destinationSquare) {
         let path = [],

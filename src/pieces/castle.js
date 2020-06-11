@@ -8,22 +8,22 @@ export default class Castle extends Piece {
         super(player, player === 1 ? chesspieceWhiteIcon : chesspieceBlackIcon);
     }
 
-    // isMovePossible(originatingSquare, whichSqaureNumberWasClicked) {
-    //     let modulusRemainder = originatingSquare % 8;
-    //     console.log(originatingSquare);
-    //     console.log(whichSqaureNumberWasClicked);
-    //     console.log(`modulusRemainder is: ${modulusRemainder}`);
-    //     let difference = 8 - modulusRemainder;
-    //     console.log(`difference is: ${difference}`);
-    //     return (
-    //         // vertical movement then horizontal movement
-    //         Math.abs(originatingSquare - whichSqaureNumberWasClicked) % 8 ===
-    //             0 ||
-    //         (whichSqaureNumberWasClicked >=
-    //             originatingSquare - modulusRemainder &&
-    //             whichSqaureNumberWasClicked < originatingSquare + difference)
-    //     );
-    // }
+    isMovePossible(originatingSquare, whichSqaureNumberWasClicked) {
+        let modulusRemainder = originatingSquare % 8;
+        console.log(originatingSquare);
+        console.log(whichSqaureNumberWasClicked);
+        console.log(`modulusRemainder is: ${modulusRemainder}`);
+        let difference = 8 - modulusRemainder;
+        console.log(`difference is: ${difference}`);
+        return (
+            // vertical movement then horizontal movement
+            Math.abs(originatingSquare - whichSqaureNumberWasClicked) % 8 ===
+                0 ||
+            (whichSqaureNumberWasClicked >=
+                originatingSquare - modulusRemainder &&
+                whichSqaureNumberWasClicked < originatingSquare + difference)
+        );
+    }
     getPathMovement(originatingSquare, destinationSquare) {
         let path = [],
             pathStart,

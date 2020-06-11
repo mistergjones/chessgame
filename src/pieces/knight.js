@@ -8,18 +8,18 @@ export default class Knight extends Piece {
         super(player, player === 1 ? chesspieceWhiteIcon : chesspieceBlackIcon);
     }
 
-    // isMovePossible(originatingSquare, destinationSquare) {
-    //     return (
-    //         originatingSquare - 17 === destinationSquare ||
-    //         originatingSquare - 10 === destinationSquare ||
-    //         originatingSquare + 6 === destinationSquare ||
-    //         originatingSquare + 15 === destinationSquare ||
-    //         originatingSquare - 15 === destinationSquare ||
-    //         originatingSquare - 6 === destinationSquare ||
-    //         originatingSquare + 10 === destinationSquare ||
-    //         originatingSquare + 17 === destinationSquare
-    //     );
-    // }
+    isMovePossible(originatingSquare, destinationSquare) {
+        return (
+            originatingSquare - 17 === destinationSquare ||
+            originatingSquare - 10 === destinationSquare ||
+            originatingSquare + 6 === destinationSquare ||
+            originatingSquare + 15 === destinationSquare ||
+            originatingSquare - 15 === destinationSquare ||
+            originatingSquare - 6 === destinationSquare ||
+            originatingSquare + 10 === destinationSquare ||
+            originatingSquare + 17 === destinationSquare
+        );
+    }
 
     getPathMovement() {
         return [];

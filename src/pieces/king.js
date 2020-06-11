@@ -8,18 +8,18 @@ export default class King extends Piece {
         super(player, player === 1 ? chesspieceWhiteIcon : chesspieceBlackIcon);
     }
 
-    // isMovePossible(originatingSquare, destinationSquare) {
-    //     return (
-    //         originatingSquare + 1 === destinationSquare ||
-    //         originatingSquare + 9 === destinationSquare ||
-    //         originatingSquare + 8 === destinationSquare ||
-    //         originatingSquare + 7 === destinationSquare ||
-    //         originatingSquare - 9 === destinationSquare ||
-    //         originatingSquare - 8 === destinationSquare ||
-    //         originatingSquare - 7 === destinationSquare ||
-    //         originatingSquare - 1 === destinationSquare
-    //     );
-    // }
+    isMovePossible(originatingSquare, destinationSquare) {
+        return (
+            originatingSquare + 1 === destinationSquare ||
+            originatingSquare + 9 === destinationSquare ||
+            originatingSquare + 8 === destinationSquare ||
+            originatingSquare + 7 === destinationSquare ||
+            originatingSquare - 9 === destinationSquare ||
+            originatingSquare - 8 === destinationSquare ||
+            originatingSquare - 7 === destinationSquare ||
+            originatingSquare - 1 === destinationSquare
+        );
+    }
 
     getPathMovement(originatingSquare, dest) {
         return [];

@@ -16,32 +16,32 @@ export default class Bishop extends Piece {
         );
     }
     // determine how far the bishop can go. REturn an array with the grid square numbers that are possible.
-    // getPathMovement(originatingSquare, destinationSquare) {
-    //     let path = [],
-    //         pathStart,
-    //         pathEnd,
-    //         incrementBy;
-    //     if (originatingSquare > destinationSquare) {
-    //         pathStart = destinationSquare;
-    //         pathEnd = originatingSquare;
-    //         console.log(`Bishop To: ${pathStart}`);
-    //         console.log(`Bushop From: ${pathEnd}`);
-    //     } else {
-    //         pathStart = originatingSquare;
-    //         pathEnd = destinationSquare;
-    //     }
-    //     if (Math.abs(originatingSquare - destinationSquare) % 9 === 0) {
-    //         incrementBy = 9;
-    //         pathStart += 9;
-    //     } else {
-    //         incrementBy = 7;
-    //         pathStart += 7;
-    //     }
+    getPathMovement(originatingSquare, destinationSquare) {
+        let path = [],
+            pathStart,
+            pathEnd,
+            incrementBy;
+        if (originatingSquare > destinationSquare) {
+            pathStart = destinationSquare;
+            pathEnd = originatingSquare;
+            console.log(`Bishop To: ${pathStart}`);
+            console.log(`Bushop From: ${pathEnd}`);
+        } else {
+            pathStart = originatingSquare;
+            pathEnd = destinationSquare;
+        }
+        if (Math.abs(originatingSquare - destinationSquare) % 9 === 0) {
+            incrementBy = 9;
+            pathStart += 9;
+        } else {
+            incrementBy = 7;
+            pathStart += 7;
+        }
 
-    //     for (let i = pathStart; i < pathEnd; i += incrementBy) {
-    //         path.push(i);
-    //     }
+        for (let i = pathStart; i < pathEnd; i += incrementBy) {
+            path.push(i);
+        }
 
-    //     return path;
-    // }
+        return path;
+    }
 }
