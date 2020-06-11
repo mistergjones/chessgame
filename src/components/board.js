@@ -47,6 +47,7 @@ export default class Board extends React.Component {
     }
 }
 
+// used to determine if a shade is light or dark green. i.e. square is odd or square is even
 function isEven(num) {
     return num % 2 === 0;
 }
