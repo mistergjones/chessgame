@@ -2,8 +2,10 @@
 
 -   [General info](#general-info)
 -   [Chess game Link](#Chess-game-link)
--   [To Do or Future Items](#to-do)
 -   [Screenshots](#screenshots)
+-   [To Do or Future Items](#to-do)
+-   [Approach Taken](#approach-taken)
+-   [Wireframe](#wireframe)
 -   [In-depth Features of Chess](#in-depth-features-of-BeerBuddy)
 -   [Challenges](#challenges)
 -   [Technologies Used](#technologies-used)
@@ -20,20 +22,26 @@ This project is to demonstrate Node JS, React JS, components, classes by the use
 -   Public access to the Git respository is via:
     [https://github.com/mistergjones/chessgame]
 
+## Screenshots
+
+![Example screenshot](screenshot.png)
+
 ## To-Do / Future Items
 
 1. Implement Check and Checkmate functionality.
 2. Enable paws to move "en passant" and move 2 sqaures from their initial spots.
+3. Implement the commonly used chess notation for recording moves.
+4. Enable React to store session state so if a player were to hit "refresh", the game does not reset.
+5. Implement a "Save" and "Load" game feature linked to a database.
+6. Via websockets, enabling real-time playing over the internet.
 
-Future items include:
+## Approach Taken
 
--   Enable React to store session state so if a player were to hit "refresh", the game does not reset.
--   Implement a "Save" and "Load" game feature linked to a database.
--   Via websockets, enabling real-time playing over the internet.
+1. Based on a classic chessboard game, constructed a simple wireframe diagram with a couple of headings, a gameboard and an area for game movement positions.
 
-## Screenshots
+## Wireframe
 
-![Example screenshot](screenshot.png)
+![Wireframe](wireframe.png)
 
 ## In-depth Features of Chess game
 
@@ -48,14 +56,18 @@ Future items include:
 
 Project is created with:
 
--   Javascript
--   React JS
--   Node JS
--   HTML/CSS
+1. Javascript
+2. React JS
+3. Node JS
+4. HTML/CSS
 
-Deployment: surge.sh
+Deployment:
 
-Version Control: Git / Github
+1. surge.sh
+
+Version Control:
+
+1. Git / Github
 
 ## Download
 
