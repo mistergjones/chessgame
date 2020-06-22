@@ -208,7 +208,7 @@ export default class Game extends React.Component {
                     var piece = squares[this.state.squareSelection];
                     // obtain the actual name of hte piece
                     var actualPiece = piece.constructor.name;
-                    console.log(`Actual piece is: ${actualPiece}`);
+                    console.log(actualPiece);
                     var notationIs = determineMovement(
                         actualPiece,
                         this.state.squareSelection,
@@ -262,7 +262,6 @@ export default class Game extends React.Component {
                     <h3>Player 1 = White || Player 2 = Black</h3>
                     <h3>Player: {this.state.player} turn</h3>
                     <h4>NOTE: Pawns can only move 1 square. No en-passant. </h4>
-                    <h4>NOTE: Check/Checkmate in progress. </h4>
 
                     <div
                         id="player-turn-box"
