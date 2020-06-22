@@ -116,7 +116,7 @@ var pieceStringTogether = function (
     squareOrigination,
     squareDestination
 ) {
-    var chessNotation =
+    chessNotation =
         chessNotation +
         player +
         ": " +
@@ -125,8 +125,6 @@ var pieceStringTogether = function (
         squareOrigination +
         " to " +
         squareDestination;
-    console.log("ASDFASFSASAFD");
-    console.log(chessNotation);
     return chessNotation;
 };
 
