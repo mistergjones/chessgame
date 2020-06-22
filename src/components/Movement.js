@@ -10,8 +10,6 @@ var determineMovement = function (
     var squareDestination = determineNotation(originatingSquare);
     var squareOrigination = determineNotation(whichSqaureNumberWasClicked);
 
-    //console.log(`Tasdfasfdsaf ${chessPiece}`);
-
     if (chessPiece === "Pawn") {
         chessNotation = pieceStringTogether(
             chessNotation,
@@ -23,89 +21,87 @@ var determineMovement = function (
 
         if (isDestinationSquareOccupied === true) {
             chessNotation = chessNotation + " and captured a piece";
-        } else {
-            chessNotation = chessNotation;
         }
 
         return chessNotation;
     }
-    // if (chessPiece === "Bishop") {
-    //     chessNotation = pieceStringTogether(
-    //         chessNotation,
-    //         player,
-    //         chessPiece,
-    //         squareOrigination,
-    //         squareDestination
-    //     );
+    if (chessPiece === "Bishop") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
 
-    //     if (isDestinationSquareOccupied === true) {
-    //         chessNotation = chessNotation + " and captured a piece";
-    //     }
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
 
-    //     return chessNotation;
-    // }
-    // if (chessPiece === "Castle") {
-    //     chessNotation = pieceStringTogether(
-    //         chessNotation,
-    //         player,
-    //         chessPiece,
-    //         squareOrigination,
-    //         squareDestination
-    //     );
+        return chessNotation;
+    }
+    if (chessPiece === "Castle") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
 
-    //     if (isDestinationSquareOccupied === true) {
-    //         chessNotation = chessNotation + " and captured a piece";
-    //     }
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
 
-    //     return chessNotation;
-    // }
-    // if (chessPiece === "King") {
-    //     chessNotation = pieceStringTogether(
-    //         chessNotation,
-    //         player,
-    //         chessPiece,
-    //         squareOrigination,
-    //         squareDestination
-    //     );
+        return chessNotation;
+    }
+    if (chessPiece === "King") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
 
-    //     if (isDestinationSquareOccupied === true) {
-    //         chessNotation = chessNotation + " and captured a piece";
-    //     }
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
 
-    //     return chessNotation;
-    // }
-    // if (chessPiece === "Knight") {
-    //     chessNotation = pieceStringTogether(
-    //         chessNotation,
-    //         player,
-    //         chessPiece,
-    //         squareOrigination,
-    //         squareDestination
-    //     );
+        return chessNotation;
+    }
+    if (chessPiece === "Knight") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
 
-    //     if (isDestinationSquareOccupied === true) {
-    //         chessNotation = chessNotation + " and captured a piece";
-    //     }
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
 
-    //     return chessNotation;
-    // }
-    // if (chessPiece === "Queen") {
-    //     chessNotation = pieceStringTogether(
-    //         chessNotation,
-    //         player,
-    //         chessPiece,
-    //         squareOrigination,
-    //         squareDestination
-    //     );
+        return chessNotation;
+    }
+    if (chessPiece === "Queen") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
 
-    //     if (isDestinationSquareOccupied === true) {
-    //         chessNotation = chessNotation + " and captured a piece";
-    //     }
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
 
-    //     return chessNotation;
-    // }
-    // console.log(chessNotation);
-    // return chessNotation;
+        return chessNotation;
+    }
+    console.log(chessNotation);
+    return chessNotation;
 };
 
 // this function simply completes the notation sentence from each
