@@ -16,7 +16,7 @@ export default class Game extends React.Component {
             message: "", // used for text messages to display
             turn: "white",
             kingChecked: false,
-            notation: ["Awaiting first move..."], //used for chess notation.
+            notation: "Awaiting first move...", //used for chess notation.
         };
     }
 
@@ -138,7 +138,7 @@ export default class Game extends React.Component {
         var aj = chessNotationSentence;
         // aj.push(chessNotationSentence);
         // aj.push(this.state.notation);
-        console.log(`jCN ${aj}`);
+        console.log(`jCN ${this.state.notation}`);
         return aj;
     }
 
@@ -156,7 +156,7 @@ export default class Game extends React.Component {
             whichSqaureNumberWasClicked
         );
 
-        //console.log(`Tasdfasfdsaf ${chessPiece}`);
+        console.log(`THE PIECE IS ${chessPiece}`);
 
         if (chessPiece === "Pawn") {
             chessNotation = this.pieceStringTogether(
@@ -170,7 +170,7 @@ export default class Game extends React.Component {
             if (isDestinationSquareOccupied === true) {
                 chessNotation = chessNotation + " and captured a piece";
             }
-
+            console.log(`111 ${chessNotation}`);
             return chessNotation;
         }
         // if (chessPiece === "Bishop") {
@@ -250,7 +250,6 @@ export default class Game extends React.Component {
         // }
         // console.log(chessNotation);
         // return chessNotation;
-        console.log(`111 ${chessNotation}`);
     };
 
     // this function simply completes the notation sentence from each
