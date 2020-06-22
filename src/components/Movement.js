@@ -12,7 +12,7 @@ var determineMovement = function (
     var squareOrigination = determineNotation(whichSqaureNumberWasClicked);
 
     if (chessPiece === "t") {
-        console.log("ADSFASDFDSAFDSADSADFSAADSF");
+        // console.log("ADSFASDFDSAFDSADSADFSAADSF");
         chessNotation = pieceStringTogether(
             chessNotation,
             player,
@@ -118,7 +118,6 @@ var pieceStringTogether = function (
         chessNotation +
         player +
         ": " +
-        chessPiece +
         " from " +
         squareOrigination +
         " to " +
