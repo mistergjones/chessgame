@@ -136,9 +136,9 @@ export default class Game extends React.Component {
 
     joinChessNotation(chessNotationSentence) {
         var aj = [];
-        aj.push(chessNotationSentence + "\n");
-        aj.push(this.state.notation);
-
+        aj.push(chessNotationSentence);
+        // aj.push(this.state.notation);
+        console.log(`jCN ${aj}`);
         return aj;
     }
 
@@ -564,7 +564,7 @@ export default class Game extends React.Component {
                         message: "",
                         turn: turn,
                         kingChecked: false,
-                        notation: "AAAAAAA",
+                        notation: gj,
                     });
                 } else {
                     // a player has clicked on a sqaure that is invalid for that piece
