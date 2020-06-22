@@ -217,9 +217,9 @@ export default class Game extends React.Component {
                     );
 
                     //pass the nototion sentence to following functoin to join
-                    actualNotation = this.joinChessNotation(actualNotation);
+                    var gj = this.joinChessNotation(actualNotation);
 
-                    console.log(actualNotation);
+                    console.log(gj);
 
                     // update the square to display the icon for the piece
                     squares[whichSqaureNumberWasClicked] =
@@ -239,7 +239,7 @@ export default class Game extends React.Component {
                         message: "",
                         turn: turn,
                         kingChecked: false,
-                        notation: actualNotation,
+                        notation: gj,
                     });
                 } else {
                     // a player has clicked on a sqaure that is invalid for that piece
