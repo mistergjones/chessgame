@@ -10,6 +10,7 @@ import { act } from "react-dom/test-utils";
 export default class Game extends React.Component {
     constructor() {
         super();
+
         this.state = {
             squares: establishChessBoard(),
             player: 1,
@@ -136,8 +137,9 @@ export default class Game extends React.Component {
     }
 
     joinChessNotation(chessNotationSentence) {
-        var aj = this.state.notation;
-        aj.unshift(chessNotationSentence + "\n");
+        var aj = [];
+        aj.push(chessNotationSentence + "\n");
+        aj.push(this.state.notation);
 
         return aj;
     }
@@ -239,7 +241,7 @@ export default class Game extends React.Component {
                         message: "",
                         turn: turn,
                         kingChecked: false,
-                        notation: "DSFASDFSADF",
+                        notation: gj,
                     });
                 } else {
                     // a player has clicked on a sqaure that is invalid for that piece
