@@ -206,8 +206,10 @@ export default class Game extends React.Component {
                 if (isThePieceMovingInRightDirection && isMoveLegal) {
                     // determine the chess notation first
                     var piece = squares[this.state.squareSelection];
+                    // obtain the actual name of hte piece
+                    var actualPiece = piece.constructor.name;
                     var actualNotation = determineMovement(
-                        piece,
+                        actualPiece,
                         this.state.squareSelection,
                         whichSqaureNumberWasClicked,
                         isDestinationSquareOccupied,
