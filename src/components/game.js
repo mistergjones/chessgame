@@ -239,7 +239,7 @@ export default class Game extends React.Component {
                         message: "",
                         turn: turn,
                         kingChecked: false,
-                        notation: gj,
+                        notation: "DSFASDFSADF",
                     });
                 } else {
                     // a player has clicked on a sqaure that is invalid for that piece
