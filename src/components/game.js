@@ -135,8 +135,8 @@ export default class Game extends React.Component {
     }
 
     joinChessNotation(chessNotationSentence) {
-        var aj = [];
-        aj.push(chessNotationSentence);
+        var aj = chessNotationSentence;
+        // aj.push(chessNotationSentence);
         // aj.push(this.state.notation);
         console.log(`jCN ${aj}`);
         return aj;
@@ -170,7 +170,7 @@ export default class Game extends React.Component {
             if (isDestinationSquareOccupied === true) {
                 chessNotation = chessNotation + " and captured a piece";
             }
-            console.log(`111 ${chessNotation}`);
+
             return chessNotation;
         }
         // if (chessPiece === "Bishop") {
@@ -250,6 +250,7 @@ export default class Game extends React.Component {
         // }
         // console.log(chessNotation);
         // return chessNotation;
+        console.log(`111 ${chessNotation}`);
     };
 
     // this function simply completes the notation sentence from each
@@ -533,7 +534,7 @@ export default class Game extends React.Component {
                     var piece = squares[this.state.squareSelection];
                     // obtain the actual name of hte piece
                     var actualPiece = piece.constructor.name;
-                    var actualNotation = this.determineMovement(
+                    var glenny = this.determineMovement(
                         actualPiece,
                         this.state.squareSelection,
                         whichSqaureNumberWasClicked,
@@ -541,9 +542,9 @@ export default class Game extends React.Component {
                         this.state.player
                     );
 
-                    console.log(`actuasldkja ${actualNotation}`);
+                    console.log(`GLENNY ${glenny}`);
                     //pass the nototion sentence to following functoin to join
-                    var gj = this.joinChessNotation(actualNotation);
+                    var gj = this.joinChessNotation(glenny);
 
                     console.log(`ZZZZ ${gj}`);
 
