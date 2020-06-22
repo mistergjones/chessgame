@@ -118,7 +118,7 @@ var pieceStringTogether = function (
         chessNotation +
         player +
         ": " +
-        chessPiece.constructor.name +
+        chessPiece +
         " from " +
         squareOrigination +
         " to " +
