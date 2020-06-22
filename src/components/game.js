@@ -170,6 +170,7 @@ export default class Game extends React.Component {
             if (isDestinationSquareOccupied === true) {
                 chessNotation = chessNotation + " and captured a piece";
             }
+            console.log(`111 ${chessNotation}`);
             return chessNotation;
         }
         // if (chessPiece === "Bishop") {
