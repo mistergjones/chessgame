@@ -1,11 +1,9 @@
 import React from "react";
-
 import "../index.css";
 import Board from "./board.js";
 import establishChessBoard from "./initialise.js";
 
 //import determineMovement from "./Movement";
-import { act } from "react-dom/test-utils";
 
 export default class Game extends React.Component {
     constructor() {
@@ -171,10 +169,7 @@ export default class Game extends React.Component {
 
             if (isDestinationSquareOccupied === true) {
                 chessNotation = chessNotation + " and captured a piece";
-            } else {
-                chessNotation = chessNotation;
             }
-
             return chessNotation;
         }
         // if (chessPiece === "Bishop") {
@@ -545,10 +540,11 @@ export default class Game extends React.Component {
                         this.state.player
                     );
 
+                    console.log(`actuasldkja ${actualNotation}`);
                     //pass the nototion sentence to following functoin to join
                     var gj = this.joinChessNotation(actualNotation);
 
-                    console.log(gj);
+                    console.log(`ZZZZ ${gj}`);
 
                     // update the square to display the icon for the piece
                     squares[whichSqaureNumberWasClicked] =
@@ -568,7 +564,7 @@ export default class Game extends React.Component {
                         message: "",
                         turn: turn,
                         kingChecked: false,
-                        notation: gj,
+                        notation: "AAAAAAA",
                     });
                 } else {
                     // a player has clicked on a sqaure that is invalid for that piece
