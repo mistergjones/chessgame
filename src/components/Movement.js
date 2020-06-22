@@ -11,6 +11,7 @@ var determineMovement = function (
     var squareOrigination = determineNotation(whichSqaureNumberWasClicked);
 
     if (chessPiece === "Pawn") {
+        console.log("ADSFASDFDSAFDSADSADFSAADSF");
         chessNotation = pieceStringTogether(
             chessNotation,
             player,
