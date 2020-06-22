@@ -136,10 +136,10 @@ export default class Game extends React.Component {
     }
 
     joinChessNotation(chessNotationSentence) {
-        var gj = this.state.notation;
-        gj.unshift(chessNotationSentence + "\n");
+        var aj = this.state.notation;
+        aj.unshift(chessNotationSentence + "\n");
 
-        return gj;
+        return aj;
     }
 
     handleClick(whichSqaureNumberWasClicked) {
