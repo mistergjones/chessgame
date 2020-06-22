@@ -103,8 +103,6 @@ var determineMovement = function (
 
             return chessNotation;
         }
-        default:
-            return false;
     }
 };
 
