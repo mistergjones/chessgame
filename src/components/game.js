@@ -16,7 +16,7 @@ export default class Game extends React.Component {
             message: "", // used for text messages to display
             turn: "white",
             kingChecked: false,
-            notation: "Awaiting first move...", //used for chess notation.
+            notation: "Chess Notation: Awaiting first move...", //used for chess notation.
         };
     }
 
