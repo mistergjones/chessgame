@@ -29,9 +29,13 @@ export default class Queen extends Piece {
         if (originatingSquare > destinationSquare) {
             pathStart = destinationSquare;
             pathEnd = originatingSquare;
+            // console.log(`Queen From: ${pathEnd}`);
+            // console.log(`Queen To: ${pathStart}`);
         } else {
             pathStart = originatingSquare;
             pathEnd = destinationSquare;
+            // console.log(`Queen From: ${pathEnd}`);
+            // console.log(`Queen To: ${pathStart}`);
         }
         if (Math.abs(originatingSquare - destinationSquare) % 8 === 0) {
             incrementBy = 8;

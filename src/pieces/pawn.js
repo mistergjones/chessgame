@@ -44,6 +44,7 @@ export default class Pawn extends Piece {
                 return true;
             }
         }
+
         return false;
     }
     // can probably get rid of the belpw
@@ -53,6 +54,9 @@ export default class Pawn extends Piece {
         } else if (whichSqaureNumberWasClicked === originatingSquare + 16) {
             return [originatingSquare + 8];
         }
+        // console.log(`Pawn From: ${originatingSquare}`);
+        // console.log(`Pawn To: ${whichSqaureNumberWasClicked}`);
+
         return [];
     }
 }

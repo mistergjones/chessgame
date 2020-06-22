@@ -21,7 +21,9 @@ export default class Knight extends Piece {
         );
     }
 
-    getPathMovement() {
+    getPathMovement(originatingSquare, destinationSquare) {
+        // console.log(`Knight From: ${originatingSquare}`);
+        // console.log(`Knight To: ${destinationSquare}`);
         return [];
     }
 }

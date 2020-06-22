@@ -10,7 +10,7 @@ body {
 }
 .main-wrapper {
     margin: auto;
-    width: 60%;
+    width: 80%;
     border: 3px solid #73ad21;
     padding: 10px;
     border-radius: 5%;
@@ -35,7 +35,11 @@ body {
 }
 
 .game-wrapper {
-    width: 100%;
+    display: inline-block;
+}
+
+.center-div-container {
+    text-align: center;
 }
 
 .dark-square {

@@ -24,11 +24,13 @@ export default class Bishop extends Piece {
         if (originatingSquare > destinationSquare) {
             pathStart = destinationSquare;
             pathEnd = originatingSquare;
-            console.log(`Bishop To: ${pathStart}`);
-            console.log(`Bushop From: ${pathEnd}`);
+            // console.log(`Bishop From: ${pathEnd}`);
+            // console.log(`Bishop To: ${pathStart}`);
         } else {
             pathStart = originatingSquare;
             pathEnd = destinationSquare;
+            // console.log(`Bishop From: ${pathEnd}`);
+            // console.log(`Bishop To: ${pathStart}`);
         }
         if (Math.abs(originatingSquare - destinationSquare) % 9 === 0) {
             incrementBy = 9;
@@ -41,7 +43,6 @@ export default class Bishop extends Piece {
         for (let i = pathStart; i < pathEnd; i += incrementBy) {
             path.push(i);
         }
-
         return path;
     }
 }

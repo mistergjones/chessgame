@@ -5,6 +5,7 @@ import Board from "./board.js";
 import establishChessBoard from "./initialise.js";
 
 import determineMovement from "./Movement";
+import { act } from "react-dom/test-utils";
 
 export default class Game extends React.Component {
     constructor() {
@@ -16,6 +17,7 @@ export default class Game extends React.Component {
             message: "", // used for text messages to display
             turn: "white",
             kingChecked: false,
+            notation: ["Awaiting first move..."], //used for chess notation.
         };
     }
 
@@ -64,12 +66,12 @@ export default class Game extends React.Component {
     isThePieceBeingBlockedFromMoving(srcToDestPath) {
         let isMoveLegal = true;
         for (let i = 0; i < srcToDestPath.length; i++) {
-            console.log(srcToDestPath);
+            // console.log(srcToDestPath);
             if (this.state.squares[srcToDestPath[i]] !== null) {
                 isMoveLegal = false;
             }
         }
-        console.log(srcToDestPath);
+        // console.log(srcToDestPath);
         return isMoveLegal;
     }
     // find the positions of the 2 kings
@@ -133,6 +135,13 @@ export default class Game extends React.Component {
         }
     }
 
+    joinChessNotation(chessNotationSentence) {
+        var gj = this.state.notation;
+        gj.unshift(chessNotationSentence + "\n");
+
+        return gj;
+    }
+
     handleClick(whichSqaureNumberWasClicked) {
         // take a copy of the squares cheesboard when you click on a square
         const squares = this.state.squares.slice();
@@ -177,17 +186,8 @@ export default class Game extends React.Component {
                     isDestinationSquareOccupied
                 );
 
-                // var whichPieceSelected = squares[this.state.squareSelection];
-                // const isThePieceMovingInRightDirection = determineMovement(
-                //     whichPieceSelected,
-                //     this.state.squareSelection,
-                //     whichSqaureNumberWasClicked,
-                //     isDestinationSquareOccupied,
-                //     this.state.player
-                // );
-
                 // find the king positions
-                console.log(this.findKingPositions(squares));
+                // console.log(this.findKingPositions(squares));
 
                 // With the selected piece, obtain valid square numbers that the piece can move to.
                 const hasPieceGotLineOfSight = squares[
@@ -204,9 +204,26 @@ export default class Game extends React.Component {
 
                 // if both flags are true....i.e. the piece can move legally
                 if (isThePieceMovingInRightDirection && isMoveLegal) {
+                    // determine the chess notation first
+                    var piece = squares[this.state.squareSelection];
+                    var actualNotation = determineMovement(
+                        piece,
+                        this.state.squareSelection,
+                        whichSqaureNumberWasClicked,
+                        isDestinationSquareOccupied,
+                        this.state.player
+                    );
+
+                    //pass the nototion sentence to following functoin to join
+                    actualNotation = this.joinChessNotation(actualNotation);
+
+                    console.log(actualNotation);
+
                     // update the square to display the icon for the piece
                     squares[whichSqaureNumberWasClicked] =
                         squares[this.state.squareSelection];
+
+                    // console.log(squares[whichSqaureNumberWasClicked]);
 
                     // update appropriate variables. Then update the state
                     squares[this.state.squareSelection] = null;
@@ -220,6 +237,7 @@ export default class Game extends React.Component {
                         message: "",
                         turn: turn,
                         kingChecked: false,
+                        notation: actualNotation,
                     });
                 } else {
                     // a player has clicked on a sqaure that is invalid for that piece
@@ -240,7 +258,7 @@ export default class Game extends React.Component {
                     <h3>Player 1 = White || Player 2 = Black</h3>
                     <h3>Player: {this.state.player} turn</h3>
                     <h4>NOTE: Pawns can only move 1 square. No en-passant. </h4>
-                    <h4>NOTE: Checking and Checkmate in progress. </h4>
+                    <h4>NOTE: Check/Checkmate in progress. </h4>
 
                     <div
                         id="player-turn-box"
@@ -250,12 +268,21 @@ export default class Game extends React.Component {
                         <h3>Commentary: {this.state.message}</h3>
                     </div>
                 </div>
-                <div className="game-wrapper">
-                    <div className="game">
-                        <Board
-                            squares={this.state.squares}
-                            onClick={(i) => this.handleClick(i)}
-                        />
+                <div className="center-div-container">
+                    <div className="game-wrapper">
+                        <div className="game">
+                            <Board
+                                squares={this.state.squares}
+                                onClick={(i) => this.handleClick(i)}
+                            />
+                            <div className="alegebraicNotation">
+                                <textarea
+                                    rows="25"
+                                    cols="52"
+                                    value={this.state.notation}
+                                ></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

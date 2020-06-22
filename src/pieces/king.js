@@ -22,6 +22,8 @@ export default class King extends Piece {
     }
 
     getPathMovement(originatingSquare, dest) {
+        // console.log(`King From: ${originatingSquare}`);
+        // console.log(`King To: ${dest}`);
         return [];
     }
 }

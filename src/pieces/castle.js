@@ -32,6 +32,8 @@ export default class Castle extends Piece {
         if (originatingSquare > destinationSquare) {
             pathStart = destinationSquare;
             pathEnd = originatingSquare;
+            // console.log(`Castle/Rook From: ${pathEnd}`);
+            // console.log(`Castle To: ${pathStart}`);
         } else {
             pathStart = originatingSquare;
             pathEnd = destinationSquare;
