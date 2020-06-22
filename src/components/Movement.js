@@ -97,6 +97,7 @@ var determineMovement = function (
 
         return chessNotation;
     }
+    return chessNotation;
 };
 
 // this function simply completes the notation sentence from each
@@ -316,3 +317,5 @@ var determineNotation = function (gridNumber) {
 };
 
 module.exports = determineMovement;
+module.exports = pieceStringTogether;
+module.exports = determineNotation;
