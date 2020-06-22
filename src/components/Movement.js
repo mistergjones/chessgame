@@ -10,7 +10,7 @@ var determineMovement = function (
     var squareDestination = determineNotation(originatingSquare);
     var squareOrigination = determineNotation(whichSqaureNumberWasClicked);
 
-    console.log(chessPiece);
+    //console.log(`Tasdfasfdsaf ${chessPiece}`);
 
     if (chessPiece === "Pawn") {
         chessNotation = pieceStringTogether(
@@ -26,63 +26,8 @@ var determineMovement = function (
         }
 
         return chessNotation;
-    } else if (chessPiece === "Bishop") {
-        chessNotation = pieceStringTogether(
-            chessNotation,
-            player,
-            chessPiece,
-            squareOrigination,
-            squareDestination
-        );
-
-        if (isDestinationSquareOccupied === true) {
-            chessNotation = chessNotation + " and captured a piece";
-        }
-
-        return chessNotation;
-    } else if (chessPiece === "Castle") {
-        chessNotation = pieceStringTogether(
-            chessNotation,
-            player,
-            chessPiece,
-            squareOrigination,
-            squareDestination
-        );
-
-        if (isDestinationSquareOccupied === true) {
-            chessNotation = chessNotation + " and captured a piece";
-        }
-
-        return chessNotation;
-    } else if (chessPiece === "King") {
-        chessNotation = pieceStringTogether(
-            chessNotation,
-            player,
-            chessPiece,
-            squareOrigination,
-            squareDestination
-        );
-
-        if (isDestinationSquareOccupied === true) {
-            chessNotation = chessNotation + " and captured a piece";
-        }
-
-        return chessNotation;
-    } else if (chessPiece === "Knight") {
-        chessNotation = pieceStringTogether(
-            chessNotation,
-            player,
-            chessPiece,
-            squareOrigination,
-            squareDestination
-        );
-
-        if (isDestinationSquareOccupied === true) {
-            chessNotation = chessNotation + " and captured a piece";
-        }
-
-        return chessNotation;
-    } else if (chessPiece === "Queen") {
+    }
+    if (chessPiece === "Bishop") {
         chessNotation = pieceStringTogether(
             chessNotation,
             player,
@@ -97,7 +42,68 @@ var determineMovement = function (
 
         return chessNotation;
     }
-    return chessNotation;
+    if (chessPiece === "Castle") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
+
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
+
+        return chessNotation;
+    }
+    if (chessPiece === "King") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
+
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
+
+        return chessNotation;
+    }
+    if (chessPiece === "Knight") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
+
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
+
+        return chessNotation;
+    }
+    if (chessPiece === "Queen") {
+        chessNotation = pieceStringTogether(
+            chessNotation,
+            player,
+            chessPiece,
+            squareOrigination,
+            squareDestination
+        );
+
+        if (isDestinationSquareOccupied === true) {
+            chessNotation = chessNotation + " and captured a piece";
+        }
+
+        return chessNotation;
+    }
+    console.log(chessNotation);
+    // return chessNotation;
 };
 
 // this function simply completes the notation sentence from each
@@ -317,5 +323,3 @@ var determineNotation = function (gridNumber) {
 };
 
 module.exports = determineMovement;
-module.exports = pieceStringTogether;
-module.exports = determineNotation;
