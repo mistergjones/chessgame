@@ -7,6 +7,7 @@ var determineMovement = function (
 ) {
     // cfeate a sentence that will evenutally hod the chess notation without spaces
     let chessNotation = "Player ";
+    console.log(`The chess piece is: ${chessPiece}`);
     var squareDestination = determineNotation(originatingSquare);
     var squareOrigination = determineNotation(whichSqaureNumberWasClicked);
 
