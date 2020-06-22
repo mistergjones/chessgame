@@ -9,8 +9,10 @@ var determineMovement = function (
     let chessNotation = "Player ";
     var squareDestination = determineNotation(originatingSquare);
     var squareOrigination = determineNotation(whichSqaureNumberWasClicked);
+    // take a copy of the objects name (i.e. Pawn, Bishop etc)
+    var actualPiece = chessPiece.constructor.name;
 
-    switch (chessPiece.constructor.name) {
+    switch (actualPiece) {
         case "Pawn": {
             chessNotation = pieceStringTogether(
                 chessNotation,
