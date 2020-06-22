@@ -277,7 +277,7 @@ export default class Game extends React.Component {
                             />
                             <div className="alegebraicNotation">
                                 <textarea
-                                    rows="25"
+                                    rows="27"
                                     cols="52"
                                     value={this.state.notation}
                                 ></textarea>
