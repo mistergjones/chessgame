@@ -3,6 +3,9 @@ import "../index.css";
 import Board from "./board.js";
 import establishChessBoard from "./initialise.js";
 
+import KingHenryImage from "./../assets/KingHenryVIII.png";
+import BlackPrinceImage from "./../assets/BlackPrince.png";
+
 import determineMovement from "./Movement";
 
 export default class Game extends React.Component {
@@ -96,7 +99,6 @@ export default class Game extends React.Component {
         isDestinationSquareOccupied
     ) {
         if (squares[this.state.squareSelection].constructor.name === "Pawn") {
-            console.log("ASDFASDFAASDFAFD");
             if (this.player === 1) {
                 if (
                     whichSqaureNumberWasClicked ===
@@ -135,11 +137,14 @@ export default class Game extends React.Component {
     }
 
     joinChessNotation(chessNotationSentence) {
-        var aj = [];
-        aj.push(chessNotationSentence + "\n");
-        aj.push(this.state.notation);
-        console.log(`jCN ${this.state.notation}`);
-        return aj;
+        // obtain the each players chess notation and append to an array
+        var notationArray = [];
+
+        notationArray.push(chessNotationSentence + ".\n");
+
+        notationArray.push(this.state.notation);
+
+        return notationArray;
     }
 
     handleClick(whichSqaureNumberWasClicked) {
@@ -208,7 +213,7 @@ export default class Game extends React.Component {
                     var piece = squares[this.state.squareSelection];
                     // obtain the actual name of hte piece
                     var actualPiece = piece.constructor.name;
-                    console.log(actualPiece);
+                    // console.log(actualPiece);
                     var notationIs = determineMovement(
                         actualPiece,
                         this.state.squareSelection,
@@ -217,11 +222,9 @@ export default class Game extends React.Component {
                         this.state.player
                     );
 
-                    console.log(`NotationIs ${notationIs}`);
                     //pass the nototion sentence to following functoin to join
-                    var gj = this.joinChessNotation(notationIs);
 
-                    console.log(`ZZZZ ${gj}`);
+                    var gj = this.joinChessNotation(notationIs);
 
                     // update the square to display the icon for the piece
                     squares[whichSqaureNumberWasClicked] =
@@ -257,9 +260,16 @@ export default class Game extends React.Component {
     render() {
         return (
             <div className="main-wrapper">
-                <h2>Chess Game</h2>
+                <div className="chess-title">
+                    <img className="heraldry" src={KingHenryImage} alt="" />
+                    <h2>Medieval Chess Game</h2>
+                    <img className="heraldry" src={BlackPrinceImage} alt="" />
+                </div>
+
                 <div className="game-info">
-                    <h3>Player 1 = White || Player 2 = Black</h3>
+                    <h3>
+                        Player 1 = King Henry VIII : Player 2 = The Black Prince
+                    </h3>
                     <h3>Player: {this.state.player} turn</h3>
                     <h4>NOTE: Pawns can only move 1 square. No en-passant. </h4>
 
@@ -280,9 +290,10 @@ export default class Game extends React.Component {
                             />
                             <div className="alegebraicNotation">
                                 <textarea
-                                    rows="27"
-                                    cols="52"
+                                    rows="25"
+                                    cols="59"
                                     value={this.state.notation}
+                                    readOnly
                                 ></textarea>
                             </div>
                         </div>

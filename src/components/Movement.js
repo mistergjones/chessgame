@@ -7,12 +7,11 @@ var determineMovement = function (
 ) {
     // cfeate a sentence that will evenutally hod the chess notation without spaces
     let chessNotation = "Player ";
-    console.log(`The chess piece is: ${chessPiece}`);
+
     var squareDestination = determineNotation(originatingSquare);
     var squareOrigination = determineNotation(whichSqaureNumberWasClicked);
 
-    if (chessPiece === "t") {
-        // console.log("ADSFASDFDSAFDSADSADFSAADSF");
+    if (chessPiece === "Pawn") {
         chessNotation = pieceStringTogether(
             chessNotation,
             player,
@@ -102,7 +101,7 @@ var determineMovement = function (
 
         return chessNotation;
     }
-    console.log(chessNotation);
+
     return chessNotation;
 };
 
@@ -117,11 +116,12 @@ var pieceStringTogether = function (
     chessNotation =
         chessNotation +
         player +
-        ": " +
-        " from " +
+        " ->" +
+        " From " +
         squareOrigination +
-        " to " +
+        " To " +
         squareDestination;
+
     return chessNotation;
 };
 

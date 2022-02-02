@@ -1,7 +1,33 @@
+* {
+    box-sizing: border-box;
+}
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font-family: "MedievalSharp", cursive;
+    color: white;
     margin: 20px;
-    background-color: white;
+    background-color: black;
+    /* background-image: url(./assets/chessBackground2.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: white; */
+}
+
+.chess-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.heraldry {
+    height: 100px;
+    width: 100px;
 }
 
 .commentary {
@@ -9,9 +35,13 @@ body {
     margin: 20px;
 }
 .main-wrapper {
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
     width: 80%;
-    border: 3px solid #73ad21;
+    border: 3px solid white;
     padding: 10px;
     border-radius: 5%;
 }
@@ -28,18 +58,24 @@ body {
     outline: thick;
 }
 
-.game {
-    /* make all rows the same length */
-    display: flex;
-    flex-direction: row;
+.center-div-container {
+    text-align: center;
 }
 
 .game-wrapper {
-    display: inline-block;
 }
 
-.center-div-container {
-    text-align: center;
+.game {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    height: 50%;
+}
+
+textarea {
+    background-color: RGB(234, 240, 206);
+    font-family: "MedievalSharp", cursive;
 }
 
 .dark-square {

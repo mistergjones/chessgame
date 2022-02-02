@@ -6,6 +6,7 @@ export default class Board extends React.Component {
     renderSquare(squareNumber, squareShade) {
         return (
             <Square
+                key={Math.random()}
                 style={
                     this.props.squares[squareNumber]
                         ? this.props.squares[squareNumber].style
@@ -40,7 +41,11 @@ export default class Board extends React.Component {
                     )
                 );
             }
-            chessboard.push(<div className="board-row">{squareRows}</div>);
+            chessboard.push(
+                <div className="board-row" key={Math.random()}>
+                    {squareRows}
+                </div>
+            );
         }
 
         return <div>{chessboard}</div>;
