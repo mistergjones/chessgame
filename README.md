@@ -29,7 +29,7 @@ This project is to demonstrate Node JS, React JS, components, classes by the use
 ## To-Do / Future Items
 
 1. Implement Check and Checkmate functionality.
-2. Enable paws to move "en passant" and move 2 sqaures from their initial spots.
+2. Enable pawns to move "en passant" and move 2 sqaures from their initial spots.
 3. Implement the commonly used chess notation for recording moves.
 4. Enable React to store session state so if a player were to hit "refresh", the game does not reset.
 5. Implement a "Save" and "Load" game feature linked to a database.
