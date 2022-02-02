@@ -18,7 +18,7 @@ This project is to demonstrate Node JS, React JS, components, classes by the use
 ## Chess game link
 
 -   The link to the Chess online game is via:
-    [http://glenchess.surge.sh/]
+    [http://medievalchess.surge.sh/]
 -   Public access to the Git respository is via:
     [https://github.com/mistergjones/chessgame]
 
