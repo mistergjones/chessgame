@@ -73,6 +73,16 @@ h2 {
     height: 50%;
 }
 
+.board {
+    margin-right: 0.5rem;
+    text-align: right;
+}
+
+.alegebraicNotation {
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
 textarea {
     background-color: RGB(234, 240, 206);
     font-family: "MedievalSharp", cursive;

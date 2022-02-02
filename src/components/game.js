@@ -284,10 +284,12 @@ export default class Game extends React.Component {
                 <div className="center-div-container">
                     <div className="game-wrapper">
                         <div className="game">
-                            <Board
-                                squares={this.state.squares}
-                                onClick={(i) => this.handleClick(i)}
-                            />
+                            <div className="board">
+                                <Board
+                                    squares={this.state.squares}
+                                    onClick={(i) => this.handleClick(i)}
+                                />
+                            </div>
                             <div className="alegebraicNotation">
                                 <textarea
                                     rows="25"
